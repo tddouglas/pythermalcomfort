@@ -1,3 +1,4 @@
+from clothing_calculator.get_current_temp import get_current_weather
 from pythermalcomfort.models import utci
 import numpy as np
 import time
@@ -7,10 +8,10 @@ import time
 
 # input variables
 tdb = 27  # dry bulb air temperature, [$^{\circ}$C]
-tr = 30  # mean radiant temperature, [$^{\circ}$C]
-v = 1  # average air speed, [m/s]
-rh = 50  # relative humidity, [%]
-utci_val = utci(tdb, tr, v, rh)
+tr = 25  # mean radiant temperature, [$^{\circ}$C]
+v = 0.3  # average air speed, [m/s]
+rh = 50  # relative humidity, [%]]
+utci_val = utci(tdb, tr, v, rh, units='ip')
 print(f'UTCI Value Run 1: {utci_val}')
 
 utci_val = utci(tdb=60, tr=30, v=1, rh=60)
